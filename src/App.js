@@ -19,6 +19,26 @@ export default class App extends Component {
     });
   };
 
+  addToBasket = (e, item_id) => {
+    this.setState((currentState) => {
+      if (this.state.basket[item_id]) {
+        return {
+          basket: {
+            ...currentState.basket,
+            [item_id]: currentState.basket[item_id] + 1,
+          },
+        };
+      } else {
+        return {
+          basket: {
+            ...currentState.basket,
+            [item_id]: 1,
+          },
+        };
+      }
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -26,7 +46,10 @@ export default class App extends Component {
         {this.state.priceLoaded ? (
           <>
             {" "}
-            <StoreList stock={this.state.stock}/>
+            <StoreList
+              stock={this.state.stock}
+              addToBasket={this.addToBasket}
+            />
           </>
         ) : (
           <PricingForm handleSubmit={this.handleSubmit} />

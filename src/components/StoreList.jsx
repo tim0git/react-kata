@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function StoreList({ stock }) {
+export default function StoreList({ stock, addToBasket }) {
   return (
     <>
       {Object.entries(stock).map((sku) => {
@@ -16,7 +16,9 @@ export default function StoreList({ stock }) {
                 )}`}</p>
               </>
             )}
-            <button>Add to Basket</button>
+            <button onClick={(e) => addToBasket(e, sku[0])}>
+              Add to Basket
+            </button>
           </div>
         );
       })}
