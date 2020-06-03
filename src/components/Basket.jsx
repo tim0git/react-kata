@@ -4,6 +4,7 @@ export default function Basket({ basket }) {
   return (
     <div>
       <h2>Basket</h2>
+      {console.dir(basket)}
       {Object.entries(basket).map(([sku, count]) => {
         return (
           <div key={sku}>
