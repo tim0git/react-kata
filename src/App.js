@@ -1,39 +1,35 @@
 import React, { Component } from "react";
 import "./App.css";
 import Header from "./components/Header";
+import PricingForm from "./components/PricingForm";
 
 export default class App extends Component {
   state = {
-    stock: {
-      A: {
-        price: 50,
-        offer: 43.33,
-        minPurchase: 3,
-      },
-      B: {
-        price: 30,
-        offer: 22.50,
-        minPurchase: 2,
-      },
-      C: {
-        price: 20,
-        offer: null,
-        minPurchase: null,
-      },
-      D: {
-        price: 15,
-        offer: null,
-        minPurchase: null,
-      },
-    },
+    stock: {},
     basket: {},
+    priceLoaded: false,
   };
 
+  handleSubmit = (e, stock) => {
+    e.preventDefault();
+    this.setState({
+      stock: { ...stock },
+      priceLoaded: true,
+    });
+  };
 
   render() {
     return (
       <div className="App">
         <Header />
+        {this.state.priceLoaded ? (
+          <>
+            {" "}
+            <h2>Hello Shopper,</h2>
+          </>
+        ) : (
+          <PricingForm handleSubmit={this.handleSubmit} />
+        )}
       </div>
     );
   }
