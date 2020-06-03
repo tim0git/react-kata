@@ -51,7 +51,7 @@ export default class App extends Component {
               stock={this.state.stock}
               addToBasket={this.addToBasket}
             />
-            <Basket basket={this.state.basket} />
+            <Basket basket={this.state.basket} stock={this.state.stock}/>
           </div>
         ) : (
           <PricingForm handleSubmit={this.handleSubmit} />

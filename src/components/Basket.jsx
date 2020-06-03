@@ -1,6 +1,7 @@
 import React from "react";
+import { checkOutSum } from "../utils/checkoutSumFunction";
 
-export default function Basket({ basket }) {
+export default function Basket({ basket, stock }) {
   return (
     <div>
       <h2>Basket</h2>
@@ -13,7 +14,7 @@ export default function Basket({ basket }) {
           </div>
         );
       })}
-      <p>Total cost of goods: {`func(basket, stock)`}</p>
+      <p>Total cost of goods:£ {checkOutSum(basket, stock).toFixed(2)}</p>
     </div>
   );
 }
