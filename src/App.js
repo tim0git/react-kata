@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import PricingForm from "./components/PricingForm";
 import StoreList from "./components/StoreList";
+import Basket from "./components/Basket";
 
 export default class App extends Component {
   state = {
@@ -44,13 +45,14 @@ export default class App extends Component {
       <div className="App">
         <Header />
         {this.state.priceLoaded ? (
-          <>
+          <div className="shopContainer">
             {" "}
             <StoreList
               stock={this.state.stock}
               addToBasket={this.addToBasket}
             />
-          </>
+            <Basket basket={this.state.basket} />
+          </div>
         ) : (
           <PricingForm handleSubmit={this.handleSubmit} />
         )}

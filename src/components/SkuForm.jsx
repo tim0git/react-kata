@@ -1,23 +1,27 @@
 import React from "react";
 
-export default function SkuForm(props) {
+export default function SkuForm({ handleSetState, sku: [name, values] }) {
   return (
     <>
-      <h2>{props.sku[0]}</h2>
+      <h2>SKU: {name}</h2>
       <label>
+        <p>Offer, Total Price in Pence</p>
         <input
-          onChange={(e) => props.handleSetState(e, props.sku[0])}
+          min={0}
+          onChange={(e) => handleSetState(e, name)}
           type="number"
           name="offer"
-          value={props.sku[1].offer}
+          value={values.offer}
         />
       </label>
       <label>
+        <p>minPurchase</p>
         <input
-          onChange={(e) => props.handleSetState(e, props.sku[0])}
+          min="1"
+          onChange={(e) => handleSetState(e, name)}
           type="number"
           name="minPurchase"
-          value={props.sku[1].minPurchase}
+          value={values.minPurchase}
         />
       </label>
     </>
