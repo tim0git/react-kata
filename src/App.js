@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import PricingForm from "./components/PricingForm";
+import StoreList from "./components/StoreList";
 
 export default class App extends Component {
   state = {
@@ -25,7 +26,7 @@ export default class App extends Component {
         {this.state.priceLoaded ? (
           <>
             {" "}
-            <h2>Hello Shopper,</h2>
+            <StoreList stock={this.state.stock}/>
           </>
         ) : (
           <PricingForm handleSubmit={this.handleSubmit} />
