@@ -5,24 +5,24 @@ export default class PricingForm extends Component {
   state = {
     stock: {
       A: {
+        price: 50,
+        offer: 130,
+        minPurchase: 3,
+      },
+      B: {
         price: 30,
         offer: 45,
         minPurchase: 2,
       },
-      B: {
-        price: 20,
-        offer: 100,
-        minPurchase: 8,
-      },
       C: {
-        price: 15,
-        offer: 25,
-        minPurchase: 3,
+        price: 20,
+        offer: null,
+        minPurchase: null,
       },
       D: {
         price: 10,
-        offer: 30,
-        minPurchase: 5,
+        offer: null,
+        minPurchase: null,
       },
     },
     //hard coded for dev purposes

@@ -14,7 +14,7 @@ export default function Basket({ basket, stock }) {
           </div>
         );
       })}
-      <p>Total cost of goods:£ {checkOutSum(basket, stock).toFixed(2)}</p>
+      <p>Total cost of goods:£ {checkOutSum(basket, stock)}</p>
     </div>
   );
 }
