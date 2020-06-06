@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.shopContainer{
+.shopContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
