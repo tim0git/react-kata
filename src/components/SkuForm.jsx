@@ -2,7 +2,7 @@ import React from "react";
 
 export default function SkuForm({ handleSetState, sku: [name, values] }) {
   return (
-    <>
+    <div>
       <h2>SKU: {name}</h2>
       <label>
         <p>Offer, Total Price in Pence</p>
@@ -24,6 +24,6 @@ export default function SkuForm({ handleSetState, sku: [name, values] }) {
           value={values.minPurchase}
         />
       </label>
-    </>
+    </div>
   );
 }

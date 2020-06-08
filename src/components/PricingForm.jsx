@@ -53,7 +53,7 @@ export default class PricingForm extends Component {
     const { stock } = this.state;
     return (
       <>
-        <form>
+        <form className="pricingContainer">
           {Object.entries(stock).map((sku) => {
             return (
               <SkuForm

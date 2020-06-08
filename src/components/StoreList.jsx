@@ -2,7 +2,7 @@ import React from "react";
 
 export default function StoreList({ stock, addToBasket }) {
   return (
-    <>
+    <div className="stockContainer">
       {Object.entries(stock).map(([name, values]) => {
         return (
           <div key={name}>
@@ -20,6 +20,6 @@ export default function StoreList({ stock, addToBasket }) {
           </div>
         );
       })}
-    </>
+    </div>
   );
 }

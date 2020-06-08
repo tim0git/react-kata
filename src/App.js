@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import "./mvp.css";
+//import "./mvp.css";
 import Header from "./components/Header";
 import PricingForm from "./components/PricingForm";
 import StoreList from "./components/StoreList";
@@ -41,6 +41,10 @@ export default class App extends Component {
     });
   };
 
+  resetPricing = (e) => {
+    this.setState({ stock: {}, priceLoaded: false, basket:{} });
+  };
+
   render() {
     return (
       <div className="App">
@@ -52,7 +56,11 @@ export default class App extends Component {
               stock={this.state.stock}
               addToBasket={this.addToBasket}
             />
-            <Basket basket={this.state.basket} stock={this.state.stock} />
+            <Basket
+              basket={this.state.basket}
+              stock={this.state.stock}
+              resetPricing={this.resetPricing}
+            />
           </div>
         ) : (
           <PricingForm handleSubmit={this.handleSubmit} />
